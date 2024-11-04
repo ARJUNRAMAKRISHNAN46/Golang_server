@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-fiber-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-fiber-app
+  template:
+    metadata:
+      labels:
+        app: my-fiber-app
+    spec:
+      containers:
+      - name: my-fiber-app
+        image: arjun164/my-fiber-app
+        ports:
+        - containerPort: 3000
